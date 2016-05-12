@@ -1,0 +1,59 @@
+group 'com.junnanhao'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+
+buildscript {
+    ext {
+        springBootVersion = '1.3.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+dependencies {
+    // 将libs 文件夹中的jar 全部打包进工程
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    // spring
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework:spring-orm')
+
+    // compile java ee 7
+    compile('javax:javaee-api:7.0')
+
+    // struts
+    compile('org.apache.struts:struts2-core:2.3.28')
+    compile('org.apache.struts:struts2-spring-plugin:2.3.28')
+    compile('org.apache.struts:struts2-convention-plugin:2.3.28')
+
+    // hibernate
+    compile ('org.hibernate:hibernate-core:5.1.0.Final')
+
+    // jdbc
+    compile('mysql:mysql-connector-java:5.1.6')
+
+}
+
+
+
