@@ -18,6 +18,10 @@ Additional Libraries and Frameworks中勾选Java和Web，点击Next
 ArtifectId填写项目的名称。点击Next-Next
 ![](img/2-New-Project-Gradle.png)
 
+勾选`Create directories for empty content roots automatically`，
+以便自动创建/java, /resources 等目录，也可手动创建。
+![](img/3-New-Project-2.png)
+
 选择项目目录，然后Finish。
 
 # 配置Gradle文件
